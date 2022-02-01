@@ -1,2 +1,2 @@
 # my-coe332-hws
-Homework Assignments for COE 332 will be posted here
+Homework Assignments for COE 332 will be posted here in different directories.
