@@ -24,4 +24,4 @@ Now run readSites.py by entering the following in the command line (do not type 
 ```bash
 $ python3 readSites.py
 ```
-This will output a summary of what the rover was doing at each leg of the mission. The time it took to reach the meteorite and the time it took to take a sample will be displayed for each leg, then the total time for the mission and number of legs will be displayed below that. 
+This will output a summary of what the rover was doing at each leg of the mission. The time it took to travel to the meteorite and the time it took to take a sample will be displayed for each leg; the total time for the mission and number of legs will be displayed below that. 
