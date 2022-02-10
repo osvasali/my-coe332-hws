@@ -12,3 +12,16 @@ The python program readSites.py uses the data from meteorite_data.json to calcul
 
 ## File Usage
 
+Using a terminal (or SCP client), first run generateSites.py by entering the following in the command line (do not type the dollar sign).
+
+```bash
+$ python3 generateSites.py
+```
+Nothing will appear in the command line, but doing this will create a new file named meteorite_data.json that contains randomized values for the meteorite composition and location.
+
+Now run readSites.py by entering the following in the command line (do not type the dollar sign).
+
+```bash
+$ python3 readSites.py
+```
+This will output a summary of what the rover was doing at each leg of the mission. The time it took to reach the meteorite and the time it took to take a sample will be displayed for each leg, then the total time for the mission and number of legs will be displayed below that. 
