@@ -1,14 +1,12 @@
 # Mars Water Quality Assesment
-
-## Overview:
 After collecting meteorite samples, the next phase of the Mars Rover Mission is to asses the quality of water used to analize the samples. The turbidity of the water will be assesed in the following program to determine if the water is safe and usable or if the Mars Laboratory should go on boil water notice.
 
-## Directions to Download Water Quality Data Set:
-1) Click the link: https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json
-2) Log into TACC Computer
-3) Move to the COE 332 Directory
-4) Create a homework03 folder by using the mkdir command.
-5) Use this command: `wget https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json` in order to download the file into the homework directory.
+## Downloading Turbidity Data Set:
+1) Using a terminal (or SCP client), enter the following in the command line (do not type the dollar sign).
+
+```bash
+$ wget https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json
+```
 
 ## Python Script Descriptions:
 This project contains three files: `analyze_water.py` , `test_analyze_water.py` , `turbidity_data.json`.
