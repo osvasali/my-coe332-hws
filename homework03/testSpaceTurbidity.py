@@ -1,4 +1,4 @@
-from space_turbidity import calculate_turbidity, calculate_time
+from spaceTurbidity import calculate_turbidity, calculate_time
 import pytest
 
 def test_calculate_turbidity():
