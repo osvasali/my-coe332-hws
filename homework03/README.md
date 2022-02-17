@@ -27,7 +27,33 @@ $ `python3 testSpaceTurbidity.py`
 ``` 
 
 ## Results:
+Example output from `spaceTurbidity.py`:
+
+```bash
+
+Average turbidity based on most recent five measurements = 0.6849400000000001 NTU
+WARNING: Turbidity is above threshold for safe use
+Minimum time required to return below a safe threshold = 0 hours
+
+``` 
+
 The code outputs three key pieces of information:
 - Average Turbidity
 - Whether the Turbidity is above or below the safety threshold
 - Minimum Decay Time required to return below safety threshold
+
+Example output from `testSpaceTurbidity.py`:
+
+```bash
+================================================= test session starts ==================================================
+platform linux -- Python 3.6.8, pytest-7.0.0, pluggy-1.0.0
+rootdir: /home/osvasali/coe332/HW/03
+collected 4 items
+
+test_space_turbidity.py ....                                                                                     [100%]
+
+================================================== 4 passed in 0.01s ===================================================
+``` 
+
+The code outputs the results from the unit tests. It demonstartes the tests that have either passed or failed and the time it took to compute these tests.
+
