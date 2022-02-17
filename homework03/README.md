@@ -50,7 +50,7 @@ platform linux -- Python 3.6.8, pytest-7.0.0, pluggy-1.0.0
 rootdir: /home/osvasali/coe332/HW/03
 collected 4 items
 
-test_space_turbidity.py ....                                                                                     [100%]
+testSpaceTurbidity.py ....                                                                                     [100%]
 
 ================================================== 4 passed in 0.01s ===================================================
 ``` 
