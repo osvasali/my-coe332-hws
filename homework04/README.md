@@ -1,6 +1,6 @@
-# Mars Rover Mission Report
+# Summary of Meteorite Data Analysis:
 
-The python programs generateSites.py and readSites.py are used in tandem to to model a rover mission on Mars where the objective is to collect meteorite samples on Syrtis Major. This model may be used to assess the missionviability of a rover that moves at 10 kilometers per hour.
+The python program `ml_data_analysis.py` uses the data from `Meteorite_Landings.json` to summarize the data collected from a Mars rover mission. The file `test_ml_data_analysis.py` tests the `ml_data_analysis.py` program to make sure that the program is working as expected. 
 
 ## Generating Meteorite Sites on Syrtis Major
 
