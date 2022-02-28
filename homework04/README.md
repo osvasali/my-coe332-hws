@@ -7,9 +7,7 @@ The python script `ml_data_analysis.py` uses the data from `Meteorite_Landings.j
 Clone the contents of this repository by entering what follows the $ into a terminal or SCP client:
 
 ```
-
 $ git clone https://github.com/osvasali/my-coe332-hws/homework04
-
 ```
 
 (other methods for cloning a repository are described here [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
