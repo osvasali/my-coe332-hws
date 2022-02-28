@@ -37,20 +37,22 @@ The name of the main dictionary is `"meteorite_landings"`. The keys `recclass` ,
 
 The python script `ml_data_analysis.py` has functions named `compute_average_mass`, `check_hemisphere`, and `count_classes` that use the data in `Meteorite_Landings.json` to output legible decriptions of the contents withing the dictionary. 
 
-#### 1) `compute_average_mass` adds all the masses in the dictionaries and then divides the total by the amount of masses found. 
-#### 2) `check_hemisphere` outputs a string that says `'Northern'` if the latitude is positive and a string that says `'Eastern'` if the longitude is positive; it also outputs `'Southern'` or `'Western'` if the respective values are negative. These strings are combined to report what quadrant of Mars the meteorites were found on.
-#### 3) `count_classes` iterates through a list of dictionaries, and pulls out the value associated with a given key. Counts the number of times each value occurs in the list of dictionaries and returns the result.
+#### 1) `compute_average_mass` 
+          adds all the masses in the dictionaries and then divides the total by the amount of masses found. 
+#### 2) `check_hemisphere` 
+          outputs a string that says `'Northern'` if the latitude is positive and a string that says `'Eastern'` if the longitude is positive; it also outputs `'Southern'` or             `'Western'` if the respective values are negative. These strings are combined to report what quadrant of Mars the meteorites were found on.
+#### 3) `count_classes` 
+          iterates through a list of dictionaries, and pulls out the value associated with a given key. Counts the number of times each value occurs in the list of dictionaries           and returns the result.
 
 The main program for this python script runs these functions assuming that the dictionary is named `"meteorite_landings"` and the keys `recclass` , `mass (g)`, `reclat`, and `reclong` are inside the sub-dictionaries in the JSON file. The main function must be altered to read from JSON files that contain similar data but use different naming conventions.
 
 ### Testing the Python Script for Efficacy
 
-`test_ml_data_analysis.py` contains a series of unit tests that tak account of possible issues that may arise when running the python script `ml_data_analysis.py`. Each function in the python script has at least five tests in `test_ml_data_analysis.py`. The tests account for incompatibilities between the `.json` file and the python script like inconsistent naming convetions or unnexpected values.
+`test_ml_data_analysis.py` contains a series of unit tests that take account of possible issues that may arise when running the python script `ml_data_analysis.py`. Each function in the python script has at least five tests in `test_ml_data_analysis.py`. The tests account for incompatibilities between the `.json` file and the python script like inconsistent naming convetions or unnexpected values.
 
 ## Run Script From the Associated Container
 
 Using a terminal (or SCP client), do the following:
-
 1. Pull the image from Docker Hub
       - `docker pull osvasali/ml_data_analysis:hw04`
   2. Run the image using the sample data provided
@@ -80,9 +82,13 @@ Using a terminal (or SCP client), do the following:
       
 ## Build an Image From the Pulled Dockerfile
 
-  2. Build the image from the Dockerfile
-      - `docker build -t <username>/ml_data_analysis:<tag> .` (remember to replace with your own username and tag)
-  3. Use your own data or download new input data
+Using a terminal (or SCP client), do the following:
+  1. Build the image using the pulled Dockerfile
+      - make sure you are in the directory pulled from this github repository
+      - `docker build -t <username>/ml_data_analysis:<tag> .` (remember to replace with your own username and tag. the <> are not necessary)
+
+  2. 
+  2. Use your own data or download new input data
       - If you would like to use your own input data, it should be in a JSON file in the format shown below:
         ```
         {
