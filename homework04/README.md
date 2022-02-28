@@ -56,12 +56,12 @@ Using a terminal (or SCP client), do the following:
 1. Pull the image from Docker Hub
       - `docker pull osvasali/ml_data_analysis:hw04`
 2. Run the image using the sample data provided
-      - `docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash`
-      - this will place you "inside" the container. Run using `ml_data_analysis.py /data/Meteorite_Landings.json` 
+      - `docker run --rm -it -v $PWD:/code osvasali/ml_data_analysis:hw04 /bin/bash`
+      - this will place you "inside" the container. Run using `ml_data_analysis.py /code/Meteorite_Landings.json` 
       - the terminal should look something like this:
       ```
-          [username@isp02 homework04]$ docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash
-          [root@7f7180bc742b /]# ml_data_analysis.py /data/Meteorite_Landings.json
+          [username@isp02 homework04]$ docker run --rm -it -v $PWD:/code osvasali/ml_data_analysis:hw04 /bin/bash
+          [root@7f7180bc742b /]# ml_data_analysis.py /code/Meteorite_Landings.json
           Summary data following meteorite analysis:
 
           The average mass of 30 meteors:
@@ -110,11 +110,9 @@ Using a terminal (or SCP client), do the following:
         ```
        - The Docker file must be altered so that the containter copies a new JSON file and contains the following line (remember to replace with a filename of your choosing. the <> are not essential). 
        ```
-        COPY Meteorite_Landings.json /data/<filename>.json
+        COPY Meteorite_Landings.json /code/<filename>.json
        ```
        - The main function inputs must be altered to read from JSON files that contain similar data but use different naming conventions.
-       - Additional data is also available for download using the command below: <br />
-         `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` 
         
 ## Run the Containerized Code Against Data 
 ### Running against the sample data inside the container
@@ -145,7 +143,8 @@ Using a terminal (or SCP client), do the following:
 ### Run against user-provided data 
 - `docker run --rm -v $PWD:/data <username>/ml_data_analysis:<tag> ml_data_analysis.py /data/<filename>.json` (again, remember to replace with your own username and input data filename)
 
-
+      - Additional data is also available for download using the command below: <br />
+         `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` 
       - `docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash`
       - Once you run the command above, you will be "inside" the container: 
 
