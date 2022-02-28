@@ -1,88 +1,172 @@
 # Summary of Meteorite Data Analysis:
 
-The python program `ml_data_analysis.py` uses the data from `Meteorite_Landings.json` to summarize the data collected from a Mars rover mission. The file `test_ml_data_analysis.py` tests the `ml_data_analysis.py` program to make sure that the program is working as expected. 
+The python program `ml_data_analysis.py` uses the data from `Meteorite_Landings.json` to summarize the Mars meteorite data collected from an autonomous rover mission. The file `test_ml_data_analysis.py` tests the `ml_data_analysis.py` program to make sure that the program is working as expected. These files are containerized so it is reproducable in different computing environments.   
 
-## Generating Meteorite Sites on Syrtis Major
-
-The python program generateSites.py creates a dictionary with one key then appends five sub-dictonaries in that key. Each sub-dictionary contains four keys: the site identification number, the site latitude, the site longitude, and the type of meteorite on site. The values of these four keys are randomly generated and then daved into a json file named meteorite_data.json.
-
-## Reading meteorite_data.json to Make a Mission Report
-
-The python program readSites.py uses the data from meteorite_data.json to calculate the distance (kilometers) the rover traveled by using the great-circle distance algorithm. The total mission duration is calculated by measuring the time it took for the rover to take a sample, the distance the rover traveled for each leg of the mission, dividing each distance by the rover speed of 10 kilometers per hour, then adding the time elasped for each leg. All of this data is outputed to the console.
-
-## File Usage
-
-Using a terminal (or SCP client), first run generateSites.py by entering the following in the command line (do not type the dollar sign).
-
-```bash
-$ python3 generateSites.py
-```
-Nothing will appear in the command line, but doing this will create a new file named meteorite_data.json that contains randomized values for the meteorite composition and location.
-
-Now run readSites.py by entering the following in the command line (do not type the dollar sign).
-
-```bash
-$ python3 readSites.py
-```
-This will output a summary of what the rover was doing at each leg of the mission. The time it took to travel to the meteorite and the time it took to take a sample will be displayed for each leg; the total time for the mission and number of legs will be displayed below that. 
-
-# Mars Water Quality Assesment
-After collecting meteorite samples, the next phase of the Mars Rover Mission is to asses the quality of water used to analize the samples. The turbidity of the water will be assesed in the following program to determine if the water is safe and usable or if the Mars Laboratory should go on boil water notice.
-
-
-
-## Python Script Descriptions:
-This project contains three files: `spaceTurbidity.py` , `testSpaceTurbidity.py` , `turbidity_data.json`.
-- `spaceTurbidity.py` contains three functions. The first function calculates the turbidity. The second function calculates the minimum decay time and determines whether the turbidity is below the threshold for safe use or not. Lastly, the main function provides structure and the ability to pull contents and dictionaries directly from the JSON file.
-- `testSpaceTurbidity.py` contains unit tests which ensure that the code and functions are working as expected. If minor changes are made to the code, these tests can be ran from this file in order to make sure that nothing is broken. Lastly, these unit tests test for edge cases.
-- `turbidity_data.json` contains the water quality data that will be used for analysis and Python operations in this project.
-
-## Downloading Turbidity Data Set:
-1) Using a terminal (or SCP client), enter the following in the command line (do not type the dollar sign) to download `turbidity_data.json` in the same directory as `spaceTurbidity.py` and `testSpaceTurbidity.py` :
-
-```bash
-$ wget https://raw.githubusercontent.com/wjallen/turbidity/main/turbidity_data.json
+## Scripts
+The analysis script was improved in its output structure, were the information is described and explained. The unit test are simple 
+sanity checks that make sure the code works correctly with different data samples. Lastly is the Docker file which contains the commands
+normally inputted into the command line, but it executes them within this file as a shortcut.
+## Instructions
+#### 1)
+Pulling information from another person docker profile is essential to sharing information, in this situation we will be pulling my Docker
+conatiner. This will allow access the scripts and data I have and it will allow for the input of your own data as well, computing the script and
+testing itself.
+```BASH
+$ docker pull jbolivar101/ml_data_analysis:hw04
 ```
 
-## Instructions to Run Code:
-1. Run `spaceTurbidity.py` by typing the following in the terminal:
-```bash
-$ `python3 spaceTurbidity.py`
-```  
-2. Run `testSpaceTurbidity.py` by typing the following in the terminal: 
-```bash
-$ `python3 testSpaceTurbidity.py`
+#### 2)
+In order to build an image we must first have a Dockerfile containing `FROM`, `RUN`,`COPY`, and `ENV PATH` commands appropriate to the
+files you want to upload. In order to build the image we must do the following,
+```BASH
+$ docker build -t jbolivar101/ml_data_analysis:hw04 .
+```
+It should output:
+```BASH
+Sending build context to Docker daemon  28.16kB
+Step 1/9 : FROM centos:7.9.2009
+ ---> eeb6ee3f44bd
+Step 2/9 : RUN yum update -y &&     yum install -y python3
+ ---> Using cache
+ ---> 33d6c421a020
+Step 3/9 : RUN pip3 install pytest==7.0.0
+ ---> Using cache
+ ---> 7016c3ab98b6
+Step 4/9 : COPY ml_data_analysis.py /code/ml_data_analysis.py
+ ---> Using cache
+ ---> a1e59cbde25c
+Step 5/9 : COPY test_ml_data_analysis.py /code/test_ml_data_analysis.py
+ ---> Using cache
+ ---> fdfcb79687a9
+Step 6/9 : COPY Meteorite_Landings.json /code/Metorite_Landings.json
+ ---> Using cache
+ ---> f54de5af9084
+Step 7/9 : RUN chmod +rx /code/ml_data_analysis.py
+ ---> Using cache
+ ---> 837a8b0a8550
+Step 8/9 : RUN chmod +rx /code/test_ml_data_analysis.py
+ ---> Using cache
+ ---> 75bb62e1ab9f
+Step 9/9 : ENV PATH "/code:$PATH"
+ ---> Using cache
+ ---> a8b717bde52c
+Successfully built a8b717bde52c
+Successfully tagged jbolivar101/ml_data_analysis:hw04
 ``` 
 
-## Results:
-Example output from `spaceTurbidity.py`:
+#### 3)
+Running a container requires access to the profile so one must be logged in, then input the run command below, and finally call upon
+the script and data file within the container. It should look like:
+```BASH
+$ docker login
 
-```bash
+$ docker run --rm -it -v $PWD:/data jbolivar101/ml_data_analysis:hw04 /bin/bash
 
-Average turbidity based on most recent five measurements = 0.6849400000000001 NTU
-WARNING: Turbidity is above threshold for safe use
-Minimum time required to return below a safe threshold = 0 hours
+$ ml_data_analysis.py /code/Meteorite_Landings.json
+```
+It should output:
+```BASH
+The average mass of 30 meteors:
+83857.3
 
-``` 
+Hemisphere summary data:
+There were  21  meteors found in the Northern and Eastern quadrant
+There were  6  meteors found in the Northern and Western quadrant
+There were  0  meteors found in the Southern and Eastern quadrant
+There were  3  meteors found in the Southern and Western quadrant
 
-The code outputs three key pieces of information:
-- Average Turbidity
-- Whether the Turbidity is above or below the safety threshold
-- Minimum Decay Time required to return below safety threshold
+Class summary data:
+The class L5 was found 1 times
+The class H6 was found 1 times
+The class EH4 was found 2 times
+The class Acapulcoite was found 1 times
+The class L6 was found 6 times
+The class LL3-6 was found 1 times
+The class H5 was found 3 times
+The class L was found 2 times
+The class Diogenite-pm was found 1 times
+The class Stone-uncl was found 1 times
+The class H4 was found 2 times
+The class H was found 1 times
+The class Iron-IVA was found 1 times
+The class CR2-an was found 1 times
+The class LL5 was found 2 times
+The class CI1 was found 1 times
+The class L/LL4 was found 1 times
+The class Eucrite-mmict was found 1 times
+The class CV3 was found 1 times
+```
 
-Example output from `testSpaceTurbidity.py`:
+#### 4)
+To use local data in this example we must first download it(it can be any link you want). This can also be run and use files locally,
+while running scripts from the container. Similar to the last step we must be logged in, then execute the following command that is all in one:
+```BASH
+$ wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
 
-```bash
-================================================= test session starts ==================================================
+$ docker run --rm -v $PWD:/data jbolivar101/ml_data_analysis:hw04 ml_data_analysis.py /data/ML_Data_Sample.json
+```
+This example runs the container, then inputs the command and calls upon data that we just downloaded from the local folder it should output:
+```BASH
+The average mass of 30 meteors:
+5081.37
+
+Hemisphere summary data:
+There were  71  meteors found in the Northern and Eastern quadrant
+There were  86  meteors found in the Northern and Western quadrant
+There were  74  meteors found in the Southern and Eastern quadrant
+There were  69  meteors found in the Southern and Western quadrant
+
+Class summary data:
+The class H4 was found 22 times
+The class L6 was found 18 times
+The class CI1 was found 29 times
+The class L5 was found 36 times
+The class LL3-6 was found 27 times
+The class LL5 was found 39 times
+The class CV3 was found 24 times
+The class CR2-an was found 26 times
+The class H6 was found 31 times
+The class EH4 was found 22 times
+The class H5 was found 26 times
+```
+
+#### 5)
+To run the unit test from the container we must run and call it from within the container, which is then accessed within the `code` folder:
+```BASH
+$ docker run --rm -it -v $PWD:/data jbolivar101/ml_data_analysis:hw04 /bin/bash
+
+$ cd code/
+
+$ pytest 
+```
+It should output:
+```BASH
+===================================================================================================== test session starts ======================================================================================================
 platform linux -- Python 3.6.8, pytest-7.0.0, pluggy-1.0.0
-rootdir: /home/osvasali/coe332/HW/03
-collected 4 items
+rootdir: /home/jbolivar/Spring2022coe/my_coe332_hws/homework04
+collected 6 items
 
-testSpaceTurbidity.py ....                                                                                     [100%]
+test_ml_data_analysis.py ......                                                                                                                                                                                          [100%]
 
-================================================== 4 passed in 0.01s ===================================================
-``` 
+====================================================================================================== 6 passed in 0.03s =======================================================================================================
+```
 
-The code outputs the results from the unit tests. It demonstartes the tests that have either passed or failed and the time it took to compute these tests.
-
-
+## INPUTS
+The scripts I have made work as long as the data provided fits within the structure of the following data set, this is because the names of the
+key data points are specific to the analysis. 
+```BASH
+"meteorite_landings": [
+    {
+      "name": "Gerald",
+      "id": "10001",
+      "recclass": "H4",
+      "mass (g)": "5754",
+      "reclat": "-75.6691",
+      "reclong": "60.6936",
+      "GeoLocation": "(-75.6691, 60.6936)"
+    }
+]
+```
+As long as the data provided holds this information it will be capable of calculating the average mass, hemisphere, and class. In case you do not
+have your own data to input, the container already has a sample and you can aquire one with
+ ` wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json`
