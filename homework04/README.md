@@ -1,4 +1,4 @@
-# Summary of Meteorite Data Analysis:
+# Creating a Summary of Meteorite Data Analysis:
 
 The python script `ml_data_analysis.py` uses the data from `Meteorite_Landings.json` to summarize the Mars meteorite data collected from an autonomous rover mission. The file `test_ml_data_analysis.py` tests the `ml_data_analysis.py` program to make sure that the program is working as expected. These files are containerized so it is reproducable in different computing environments.   
 
