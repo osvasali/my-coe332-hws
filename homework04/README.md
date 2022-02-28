@@ -48,7 +48,7 @@ The python script `ml_data_analysis.py` has functions named `compute_average_mas
 
 ### Testing the Python Script for Efficacy
 
-`test_ml_data_analysis.py` contains a series of unit tests that take account of possible issues that may arise when running the python script `ml_data_analysis.py`. Each function in the python script has at least five tests in `test_ml_data_analysis.py`. The tests account for incompatibilities between the `.json` file and the python script like inconsistent naming convetions or unnexpected values.
+`test_ml_data_analysis.py` contains a series of unit tests that take account of possible issues that may arise when running the python script `ml_data_analysis.py`. Each function in the python script has at least five tests in `test_ml_data_analysis.py`. The tests account for incompatibilities between the JSON file and the python script like inconsistent naming convetions or unnexpected values.
 
 ## Pull and use Existing Image from Dockerhub
 
@@ -92,28 +92,24 @@ Using a terminal (or SCP client), do the following:
         {
           "meteorite_landings": [
             {
-              "name": "Ruiz",
-              "id": "10001",
-              "recclass": "L5",
-              "mass (g)": "21",
-              "reclat": "50.775",
-              "reclong": "6.08333",
-              "GeoLocation": "(50.775, 6.08333)"
+              "recclass": "EH4",
+              "mass (g)": "321",
+              "reclat": "58.775",
+              "reclong": "12.08333",
             },
             {
-              "name": "Beeler",
-              "id": "10002",
-              "recclass": "H6",
-              "mass (g)": "720",
+              "recclass": "Acapulcoite",
+              "mass (g)": "450",
               "reclat": "56.18333",
-              "reclong": "10.23333",
-              "GeoLocation": "(56.18333, 10.23333)"
+              "reclong": "-10.23333",
             },
             ...
         ```
+       - Otherwise the main function inputs must be altered to read from JSON files that contain similar data but use different naming conventions.
        - Additional data is also available for download using the command below: <br />
          `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` (remember to replace with a filename of your choosing)
-  5. Run the containerized code using user-provided data
+         
+  3. Run the containerized code using user-provided data
       - `docker run --rm -v $PWD:/data <username>/ml_data_analysis:<tag> ml_data_analysis.py /data/<filename>.json` (again, remember to replace with your own username and input data filename)
 
 
