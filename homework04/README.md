@@ -2,6 +2,24 @@
 
 The python program `ml_data_analysis.py` uses the data from `Meteorite_Landings.json` to summarize the Mars meteorite data collected from an autonomous rover mission. The file `test_ml_data_analysis.py` tests the `ml_data_analysis.py` program to make sure that the program is working as expected. These files are containerized so it is reproducable in different computing environments.   
 
+## Files
+
+### Dictionaries with Meteorite Data
+
+The 
+
+```
+  "name": "Belin",
+      "id": "10029",
+      "recclass": "H5",
+      "mass (g)": "32000",
+      "reclat": "42.53333",
+      "reclong": "-85.88333",
+      "GeoLocation": "(42.53333, -85.88333)"
+    },
+```    
+
+
 ### Reading meteorite_data.json to Make a Mission Report
 The analysis script was improved in its output structure, were the information is described and explained. The unit test are simple 
 sanity checks that make sure the code works correctly with different data samples. Lastly is the Docker file which contains the commands
