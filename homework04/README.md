@@ -31,6 +31,9 @@ The python script `ml_data_analysis.py` has functions named `compute_average_mas
 #### 2) `check_hemisphere` outputs a string that says `'Northern'` if the latitude is positive and a string that says `'Eastern'` if the longitude is positive; it also outputs `'Southern'` or `'Western'` if the respective values are negative. These strings are combined to report what quadrant of Mars the meteorites were found on.
 #### 3) `count_classes` iterates through a list of dictionaries, and pulls out the value associated with a given key. Counts the number of times each value occurs in the list of dictionaries and returns the result.
 
+### Testing the Python Script for Efficacy
+
+`test_ml_data_analysis.py` contains a series of unit tests that tak account of possible issues that may arise when running the python script `ml_data_analysis.py`. Each function in the python script has at least five tests in `test_ml_data_analysis.py`. The tests account for incompatibilities between the `.json` file and the python script like inconsistent naming convetions or unnexpected values.
 
 ## Instructions
 #### 1)
