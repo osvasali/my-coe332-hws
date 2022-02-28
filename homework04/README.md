@@ -164,7 +164,7 @@ Using a terminal (or SCP client), do the following:
 
 ## Interpreting the Output
 
-Here is an example output that summarizes the Meteorite data collected from a Mars rover mission:
+1. Here is an example output that summarizes the Meteorite data collected from a Mars rover mission:
 
 ```
 Summary data following meteorite analysis:
@@ -200,6 +200,6 @@ The class Eucrite-mmict was found 1 times
 The class CV3 was found 1 times
 ```
 
-          -The average mass of the meteors is shown in grams.
-          -In the subsequent section, the amount of meteors found in each quadrant is displayed.
-          -The last section lists all the classes found and the amount of meteors in each class. 
+ 1. The average mass of the meteors is shown in grams.
+ 2. In the subsequent section, the amount of meteors found in each quadrant is displayed.
+ 3. The last section lists all the classes found and the amount of meteors in each class. 
