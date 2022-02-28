@@ -108,14 +108,18 @@ Using a terminal (or SCP client), do the following:
             },
             ...
         ```
-       - Otherwise the main function inputs must be altered to read from JSON files that contain similar data but use different naming conventions.
+       - The Docker file must be altered so that the containter copies a new JSON file and contains the following line (remember to replace with a filename of your choosing. the <> are not essential). 
+       ```
+        COPY Meteorite_Landings.json /data/<filename>.json
+       ```
+       - The main function inputs must be altered to read from JSON files that contain similar data but use different naming conventions.
        - Additional data is also available for download using the command below: <br />
-         `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` (remember to replace with a filename of your choosing)
+         `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` 
         
 ## Run the Containerized Code Against Data 
 ### Running against the sample data inside the container
    1. Using a terminal (or SCP client), do the following:
-      - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /code/Meteorite_Landings.json`
+      - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /data/Meteorite_Landings.json`
       - the the following will be the output:
       ```
       Summary data following meteorite analysis:
