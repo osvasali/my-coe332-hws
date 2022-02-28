@@ -162,4 +162,44 @@ Using a terminal (or SCP client), do the following:
           ================================================================== 6 passed in 0.04s ===================================================================
         ```
 
+## Interpreting the Output
 
+Here is an example output that summarizes the Meteorite data collected from a Mars rover mission:
+
+```
+Summary data following meteorite analysis:
+
+The average mass of 30 meteors:
+ 83857.3
+
+ Hemisphere summary data:
+There were  21  meteors found in the  Northern & Eastern quadrant
+There were  6  meteors found in the  Northern & Western quadrant
+There were  0  meteors found in the  Southern & Eastern quadrant
+There were  3  meteors found in the  Southern & Western quadrant
+
+ Class summary data:
+The class L5 was found 1 times
+The class H6 was found 1 times
+The class EH4 was found 2 times
+The class Acapulcoite was found 1 times
+The class L6 was found 6 times
+The class LL3-6 was found 1 times
+The class H5 was found 3 times
+The class L was found 2 times
+The class Diogenite-pm was found 1 times
+The class Stone-uncl was found 1 times
+The class H4 was found 2 times
+The class H was found 1 times
+The class Iron-IVA was found 1 times
+The class CR2-an was found 1 times
+The class LL5 was found 2 times
+The class CI1 was found 1 times
+The class L/LL4 was found 1 times
+The class Eucrite-mmict was found 1 times
+The class CV3 was found 1 times
+```
+
+-The average mass of the meteors is shown in grams.
+-In the subsequent section, the amount of meteors found in each quadrant is displayed.
+-The last section lists all the classes found and the amount of meteors in each class. 
