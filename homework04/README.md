@@ -116,7 +116,7 @@ Using a terminal (or SCP client), do the following:
 ### Running against the sample data inside the container
    Using a terminal (or SCP client), do the following:
       - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /code/Meteorite_Landings.json`
-      - the the following will be the output:
+      - the the following will be the output: <br />
       ```
       Summary data following meteorite analysis:
 
