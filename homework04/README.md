@@ -114,7 +114,41 @@ Using a terminal (or SCP client), do the following:
         
 ## Run the Containerized Code Against Data 
 ### Running against the sample data inside the container
-   Using a terminal (or SCP client), do the following:
+   1. Using a terminal (or SCP client), do the following:
       - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /code/Meteorite_Landings.json`
       - the the following will be the output:
+      ```
+      Summary data following meteorite analysis:
+
+      The average mass of 30 meteors:
+       83857.3
+
+       Hemisphere summary data:
+      There were  21  meteors found in the  Northern & Eastern quadrant
+      There were  6  meteors found in the  Northern & Western quadrant
+      There were  0  meteors found in the  Southern & Eastern quadrant
+      There were  3  meteors found in the  Southern & Western quadrant
+
+       Class summary data:
+      The class L5 was found 1 times
+      The class H6 was found 1 times
+      The class EH4 was found 2 times
+      The class Acapulcoite was found 1 times
+      The class L6 was found 6 times
+      ...
+      ```
       
+### Run against user-provided data 
+- `docker run --rm -v $PWD:/data <username>/ml_data_analysis:<tag> ml_data_analysis.py /data/<filename>.json` (again, remember to replace with your own username and input data filename)
+
+
+      - `docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash`
+      - Once you run the command above, you will be "inside" the container: 
+
+      ```
+      [osvasali@isp02 04]$ docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash
+      [root@d76c8db19772 /]#
+      
+      ```
+
+
