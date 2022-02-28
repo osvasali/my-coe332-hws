@@ -27,12 +27,9 @@ The keys `recclass` , `mass (g)`, `reclat`, and `reclong` contain values that wi
 ### Reading Dictionaries to Summarize Meteorite Data
 
 The python script `ml_data_analysis.py` has functions named `compute_average_mass`, `check_hemisphere`, and `count_classes` that use the data in `Meteorite_Landings.json` to output legible decriptions of the contents withing the dictionary. 
-#### 1)
-`compute_average_mass` adds all the masses in the dictionaries and then divides the total by the amount of masses found. 
-#### 2)
-`check_hemisphere` outputs a string that says `'Northern'` if the latitude is positive and a string that says `'Eastern'` if the longitude is positive; it also outputs `'Southern'` or `'Western'` if the respective values are negative. These strings are combined to report what quadrant of Mars the meteorites were found on.
-#### 3)
-`count_classes` iterates through a list of dictionaries, and pulls out the value associated with a given key. Counts the number of times each value occurs in the list of dictionaries and returns the result.
+#### 1) `compute_average_mass` adds all the masses in the dictionaries and then divides the total by the amount of masses found. 
+#### 2) `check_hemisphere` outputs a string that says `'Northern'` if the latitude is positive and a string that says `'Eastern'` if the longitude is positive; it also outputs `'Southern'` or `'Western'` if the respective values are negative. These strings are combined to report what quadrant of Mars the meteorites were found on.
+#### 3) `count_classes` iterates through a list of dictionaries, and pulls out the value associated with a given key. Counts the number of times each value occurs in the list of dictionaries and returns the result.
 
 
 ## Instructions
