@@ -34,7 +34,7 @@ The python script `ml_data_analysis.py` has functions named `compute_average_mas
 #### 2) `check_hemisphere` outputs a string that says `'Northern'` if the latitude is positive and a string that says `'Eastern'` if the longitude is positive; it also outputs `'Southern'` or `'Western'` if the respective values are negative. These strings are combined to report what quadrant of Mars the meteorites were found on.
 #### 3) `count_classes` iterates through a list of dictionaries, and pulls out the value associated with a given key. Counts the number of times each value occurs in the list of dictionaries and returns the result.
 
-The main program for this python script runs these functions assuming that the dictionary is named `"meteorite_landings"` and the keys `recclass` , `mass (g)`, `reclat`, and `reclong` are inside the sub-dictionaries in the `.json` file. The main function must be altered to read from `.json` files that contain similar data but use different naming conventions.
+The main program for this python script runs these functions assuming that the dictionary is named `"meteorite_landings"` and the keys `recclass` , `mass (g)`, `reclat`, and `reclong` are inside the sub-dictionaries in the JSON file. The main function must be altered to read from JSON files that contain similar data but use different naming conventions.
 
 ### Testing the Python Script for Efficacy
 
