@@ -36,3 +36,33 @@ The main program for this python script runs these functions assuming that the k
 
 `test_ml_data_analysis.py` contains a series of unit tests that tak account of possible issues that may arise when running the python script `ml_data_analysis.py`. Each function in the python script has at least five tests in `test_ml_data_analysis.py`. The tests account for incompatibilities between the `.json` file and the python script like inconsistent naming convetions or unnexpected values.
 
+## How to Run From a Container
+
+Using a terminal (or SCP client), do the following:
+
+1. Pull the image from Docker Hub
+      - `docker pull osvasali/ml_data_analysis:hw04`
+  2. Run the image using the sample data provided
+      - `docker run --rm osvasali/ml_data_analysis:hw04 ml_data_analysis.py /data/Meteorite_Landings.json`
+      - Once you run the command above, you should see the following output: 
+
+      ```
+      Summary data following meteorite analysis:
+
+      The average mass of 30 meteors:
+       83857.3
+
+       Hemisphere summary data:
+      There were  21  meteors found in the  Northern & Eastern quadrant
+      There were  6  meteors found in the  Northern & Western quadrant
+      There were  0  meteors found in the  Southern & Eastern quadrant
+      There were  3  meteors found in the  Southern & Western quadrant
+
+       Class summary data:
+      The class L5 was found 1 times
+      The class H6 was found 1 times
+      The class EH4 was found 2 times
+      The class Acapulcoite was found 1 times
+      The class L6 was found 6 times
+      ...
+      ```
