@@ -82,7 +82,7 @@ Using a terminal (or SCP client), do the following:
           ...
       ```
       
-## Build an Image From the Pulled Dockerfile
+## Build an Image
 
 Using a terminal (or SCP client), do the following:
   1. Build the image using the pulled Dockerfile
@@ -140,18 +140,26 @@ Using a terminal (or SCP client), do the following:
       ...
       ```
       
-### Run against user-provided data 
-- `docker run --rm -v $PWD:/data <username>/ml_data_analysis:<tag> ml_data_analysis.py /data/<filename>.json` (again, remember to replace with your own username and input data filename)
+### Run against user-provided data found on the internet
+2. Using a terminal (or SCP client), do the following:
+      - Dowload data using this command `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` (remember to replace with a filename of your choosing. the <> are not essential)
+      - Note: the above link may be replaced with one of your choosing as long as it meets the conditions described in the "Build an Image" section of this `README.md` document.
+      - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /data/<filename>.json` (remember to replace with the filename chosen in previous step)
+      -  The output should look like the the output in section 1, but may have different values.
 
-      - Additional data is also available for download using the command below: <br />
-         `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` 
-      - `docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash`
-      - Once you run the command above, you will be "inside" the container: 
+## Run The Containerized Test Suite With pytest
+  - Using a terminal (or SCP client), enter the following:
+      - `docker run --rm -it osvasali/ml_data_analysis:hw04 /bin/bash` to start an interactive shell inside the container
+      - Enter `pytest /code/` in the terminal. This will be the output if the tests ran successfully:
+        ```
+          ================================================================= test session starts ==================================================================
+          platform linux -- Python 3.6.8, pytest-7.0.0, pluggy-1.0.0
+          rootdir: /code
+          collected 6 items
 
-      ```
-      [osvasali@isp02 04]$ docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash
-      [root@d76c8db19772 /]#
-      
-      ```
+          code/test_ml_data_analysis.py ......                                                                                                             [100%]
+
+          ================================================================== 6 passed in 0.04s ===================================================================
+        ```
 
 
