@@ -4,6 +4,16 @@ The python script `ml_data_analysis.py` uses the data from `Meteorite_Landings.j
 
 ## Files
 
+Clone the contents of this repository by entering what follows the $ into a terminal or SCP client:
+
+```
+
+$ git clone https://github.com/osvasali/my-coe332-hws/homework04
+
+```
+
+(other methods for cloning a repository are described here [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
+
 ### Dictionaries with Meteorite Data
 
 `Meteorite_Landings.json` contains a dictionary of dictionaries that each contain multiple key values. Here is and example of a dictionary in the within `Meteorite_Landings.json` file:
@@ -73,9 +83,6 @@ Using a terminal (or SCP client), do the following:
       
 ## Build an Image From the Pulled Dockerfile
 
-1. Download the Dockerfile
-      - Either clone this repository using `git clone` (learn how to clone a repository [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
-      - Or copy the Dockerfile contents and paste into your own Dockerflile
   2. Build the image from the Dockerfile
       - `docker build -t <username>/ml_data_analysis:<tag> .` (remember to replace with your own username and tag)
   3. Use your own data or download new input data
