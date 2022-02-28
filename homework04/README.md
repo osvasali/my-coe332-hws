@@ -116,8 +116,8 @@ Using a terminal (or SCP client), do the following:
 ### Running against the sample data inside the container
    Using a terminal (or SCP client), do the following:
       - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /code/Meteorite_Landings.json`
-      - the the following will be the output: <br />
-      ```
+      - the the following will be the output:
+        ```
       Summary data following meteorite analysis:
 
       The average mass of 30 meteors:
