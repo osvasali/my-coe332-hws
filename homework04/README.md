@@ -164,7 +164,7 @@ Using a terminal (or SCP client), do the following:
 
 ## Interpreting the Output
 
-1. Here is an example output that summarizes the Meteorite data collected from a Mars rover mission:
+- Here is an example output that summarizes the Meteorite data collected from a Mars rover mission:
 
 ```
 Summary data following meteorite analysis:
