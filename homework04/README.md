@@ -28,8 +28,7 @@ $ git clone https://github.com/osvasali/my-coe332-hws/homework04
                 "reclong": "-85.88333",
                 "GeoLocation": "(42.53333, -85.88333)"
               },
-               ...
-      
+               ...    
 ```
 
 The name of the main dictionary is `"meteorite_landings"`. The keys `recclass` , `mass (g)`, `reclat`, and `reclong` contain values that will be summarised by the script `ml_data_analysis.py`. These keys characterize the class the meteorite belongs to, its mass in grams, and its latitude and longitude coordinates.
