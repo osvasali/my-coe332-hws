@@ -56,7 +56,7 @@ Using a terminal (or SCP client), do the following:
 1. Pull the image from Docker Hub
       - `docker pull osvasali/ml_data_analysis:hw04`
 2. Run the image using the sample data provided
-      - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /data/Meteorite_Landings.json`
+      - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /code/Meteorite_Landings.json`
       - the the following will be the output:
       ```
       Summary data following meteorite analysis:
@@ -108,8 +108,11 @@ Using a terminal (or SCP client), do the following:
        - Otherwise the main function inputs must be altered to read from JSON files that contain similar data but use different naming conventions.
        - Additional data is also available for download using the command below: <br />
          `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` (remember to replace with a filename of your choosing)
-         
-  3. Run the containerized code using user-provided data
+        
+## Run the Containerized Code Against the Sample Data Inside the Container
+
+
+## Run the containerized code using user-provided data
       - `docker run --rm -v $PWD:/data <username>/ml_data_analysis:<tag> ml_data_analysis.py /data/<filename>.json` (again, remember to replace with your own username and input data filename)
 
 
