@@ -44,21 +44,20 @@ The python script `ml_data_analysis.py` has functions named `compute_average_mas
  3) `count_classes` 
     - iterates through a list of dictionaries, and pulls out the value associated with a given key. Counts the number of times each value occurs in the list of dictionaries           and returns the result.
 
-The main program for this python script runs these functions assuming that the dictionary is named `"meteorite_landings"` and the keys `recclass` , `mass (g)`, `reclat`, and `reclong` are inside the sub-dictionaries in the JSON file. The main function must be altered to read from JSON files that contain similar data but use different naming conventions.
+
 
 ### Testing the Python Script for Efficacy
 
 `test_ml_data_analysis.py` contains a series of unit tests that take account of possible issues that may arise when running the python script `ml_data_analysis.py`. Each function in the python script has at least five tests in `test_ml_data_analysis.py`. The tests account for incompatibilities between the `.json` file and the python script like inconsistent naming convetions or unnexpected values.
 
-## Run Script From the Associated Container
+## Pull and use Existing Image from Dockerhub
 
 Using a terminal (or SCP client), do the following:
 1. Pull the image from Docker Hub
       - `docker pull osvasali/ml_data_analysis:hw04`
-  2. Run the image using the sample data provided
-      - `docker run --rm osvasali/ml_data_analysis:hw04 ml_data_analysis.py /data/Meteorite_Landings.json`
-      - Once you run the command above, you should see the following output: 
-
+2. Run the image using the sample data provided
+      - `docker run --rm -v $PWD:/data osvasali/ml_data_analysis:hw04 ml_data_analysis.py /data/Meteorite_Landings.json`
+      - the the following will be the output:
       ```
       Summary data following meteorite analysis:
 
@@ -86,9 +85,8 @@ Using a terminal (or SCP client), do the following:
   1. Build the image using the pulled Dockerfile
       - make sure you are in the directory pulled from this github repository
       - `docker build -t <username>/ml_data_analysis:<tag> .` (remember to replace with your own username and tag. the <> are not necessary)
-
-  2. 
-  2. Use your own data or download new input data
+  2. Use provided data or download new input data
+      - The main program in the `ml_data_analysis.py` script runs functions assuming the dictionary is named `"meteorite_landings"` and the keys `recclass` , `mass (g)`, `reclat`, and `reclong` are inside the sub-dictionaries in the JSON file. 
       - If you would like to use your own input data, it should be in a JSON file in the format shown below:
         ```
         {
@@ -117,3 +115,13 @@ Using a terminal (or SCP client), do the following:
          `curl https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json --output <filename>.json` (remember to replace with a filename of your choosing)
   5. Run the containerized code using user-provided data
       - `docker run --rm -v $PWD:/data <username>/ml_data_analysis:<tag> ml_data_analysis.py /data/<filename>.json` (again, remember to replace with your own username and input data filename)
+
+
+      - `docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash`
+      - Once you run the command above, you will be "inside" the container: 
+
+      ```
+      [osvasali@isp02 04]$ docker run --rm -it -v $PWD:/data osvasali/ml_data_analysis:hw04 /bin/bash
+      [root@d76c8db19772 /]#
+      
+      ```
