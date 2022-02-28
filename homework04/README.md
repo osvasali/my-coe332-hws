@@ -40,7 +40,7 @@ The main program for this python script runs these functions assuming that the d
 
 `test_ml_data_analysis.py` contains a series of unit tests that tak account of possible issues that may arise when running the python script `ml_data_analysis.py`. Each function in the python script has at least five tests in `test_ml_data_analysis.py`. The tests account for incompatibilities between the `.json` file and the python script like inconsistent naming convetions or unnexpected values.
 
-## Run From the Associated Container
+## Run Script From the Associated Container
 
 Using a terminal (or SCP client), do the following:
 
