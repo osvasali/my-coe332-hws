@@ -5,16 +5,12 @@ The application does this by collecting data from XML files and making them easi
 position in cartesian coordinates, units of velocity, magnitude of velocity, and other details associated with the ISS for a particular sighting or epoch.   
 
 ## Files
-##### Scripts
 - ```app.py```: this is the python application that uses GET and POST fucntions that output information about the ISS 
-- ```test_app.py```: tests the functionality of the routes created in app.py
-##### Container files
 - ```Dockerfile```: creates a an a docker image needed to containerize the application
-- ```Makefile```: automation tool that serves as a second option to create a container
 - ```requirements.txt```: captures the required libraries and packages for the application in Dockerfile
-##### XML files to be used as examples:
-- ```ISS.OEM_J2K_EPH.xml```: an XML with ISS positional data set that describes each epoch
-- ```XMLsightingData_citiesUSA06.xml```: an XML file with ISS sighting data set (country - > region -> city)
+##### data sample:
+-```ML_Data_Sample.json```: contains meteorite landings data (mass,location,classification, id number). it is sample data and only includes ids from 10001-10300 
+
 
 ### Source
 The XML files above come from NASA's official website found [here](https://data.nasa.gov/Space-Science/ISS_COORDS_2022-02-13/r6u8-bhhq).
