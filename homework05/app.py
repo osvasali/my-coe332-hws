@@ -8,10 +8,10 @@ app = Flask(__name__)
 ML_data = {}
 
 @app.route('/data', methods=['POST','GET'])
-def data():
+def data() -> str:
     '''
-    POST: Loads data into Redis container.
-
+    POST: Loads data into Redis container. Returns: string with confirmation message
+    GET: Prints either complete or indexed meteorite landings data. Returns: string with data from json file  
     '''
     rd = redis.Redis(host='172.17.0.16', port=6379, db=0)
     if request.method == 'POST':
