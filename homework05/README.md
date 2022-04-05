@@ -9,7 +9,7 @@ position in cartesian coordinates, units of velocity, magnitude of velocity, and
 - ```Dockerfile```: creates a an a docker image needed to containerize the application
 - ```requirements.txt```: captures the required libraries and packages for the application in Dockerfile
 ##### data sample:
--```ML_Data_Sample.json```: contains meteorite landings data (mass,location,classification, id number). it is sample data and only includes ids from 10001-10300 
+- ```ML_Data_Sample.json```: contains meteorite landings data (mass,location,classification, id number). it is sample data and only includes ids from 10001-10300 
 
 
 ### Source
