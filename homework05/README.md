@@ -76,11 +76,18 @@ $ docker inspect <redis container id> | grep IPAddress
     ```
     $ emacs app.py
     ```
-    Next in line that says `return redis.Redis(host='172.17.0.16', port=6379, db=0)` chnage `172.17.0.16` to the IP address found in step 2.
+    
+    Next in line that says `return redis.Redis(host='172.17.0.16', port=6379, db=0)` change `172.17.0.16` to the IP address found in step 2.
     
     Close and save:
     1. `ctrl X` or `cmd X`
     2. `ctrl S` or `cmd S`
     3. `ctrl Z` or `cmd Z`
 
+4) enter the following to make sure app.py is exported to Flask
 
+```
+$ export FLASK_APP=app.py
+$ export FLASK_ENV=development
+$ flask run -p <port number>
+```
