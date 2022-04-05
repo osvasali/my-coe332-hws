@@ -91,3 +91,101 @@ $ export FLASK_APP=app.py
 $ export FLASK_ENV=development
 $ flask run -p <port number>
 ```
+
+## Interpret the Results
+Examples for POST, GET, and GET with start query:
+  1. Load data into Redis container with `$ curl localhost:<flask port number>/data -X POST`:
+      - The ouput will be a confirmation message or error saying the file is missing
+      
+      ```
+      [username@isp02 homework05]$ curl localhost:5027/data -X POST
+       ✅ Loading Complete ✅
+      ```
+      - possible error message when ```ML_Data_Sample.json``` is not in the directory:
+
+      ```
+      ...
+          with open('_ML_Data_Sample.json' , 'r') as f:
+      FileNotFoundError: [Errno 2] No such file or directory: 'ML_Data_Sample.json'
+
+      -->
+      ```
+
+
+  2. Print ```ML_Data_Sample.json``` to terminal with `$ curl localhost:<port number>/data -X GET`
+      - excerpt below marked with breaks using `...`.
+      - the output will be the contents of the json file
+      
+      ```
+      [username@isp02 homework05]$ curl localhost:5027/data -X GET
+      [
+        {
+          "name": "Gerald",
+          "id": "10001",
+          "recclass": "H4",
+          "mass (g)": "5754",
+          "reclat": "-75.6691",
+          "reclong": "60.6936",
+          "GeoLocation": "(-75.6691, 60.6936)"
+        },
+        {
+          "name": "Dominique",
+          "id": "10002",
+          "recclass": "L6",
+          "mass (g)": "1701",
+          "reclat": "-9.4378",
+          "reclong": "49.5751",
+          "GeoLocation": "(-9.4378, 49.5751)"
+        },
+        ...
+          {
+          "name": "Christina",
+          "id": "10300",
+          "recclass": "H5",
+          "mass (g)": "4291",
+          "reclat": "-38.1533",
+          "reclong": "-46.7127",
+          "GeoLocation": "(-38.1533, -46.7127)"
+        }
+      ]
+      ```
+
+  3.  Implement an optional start query parameter that takes an integer and returns the Meteorite Landing data starting at that index using 
+  
+      `$ localhost:<your flask port number>/data?start=<starting index> -X GET`. Replace `<starting index>` with a number from 1 to 300
+      
+      -output a shortened version of data set
+      -includes the start index at the end of output message
+      
+      ```
+      [username@isp02 homework05]$ curl localhost:5027/data?start=299 -X GET
+      [
+       {
+        "name": "Jennifer",
+        "id": "10299",
+        "recclass": "L5",
+        "mass (g)": "539",
+        "reclat": "-84.0579",
+        "reclong": "69.9994",
+        "GeoLocation": "(-84.0579, 69.9994)"
+       },
+       {
+        "name": "Christina",
+        "id": "10300",
+        "recclass": "H5",
+        "mass (g)": "4291",
+        "reclat": "-38.1533",
+        "reclong": "-46.7127",
+        "GeoLocation": "(-38.1533, -46.7127)"
+       }
+      ]
+
+      🤓 DATA AT START INDEX 299
+      ```
+      
+      - possible error message when user enters a number less than 1 or a string:
+
+      ```
+      [osvasali@isp02 homework05]$ curl localhost:5027/data?start=jfkc -X GET
+      ❌ Could not convert data to an integer. ❌
+      ```
