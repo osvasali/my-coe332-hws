@@ -47,22 +47,25 @@ $ docker build -t <username>/<name it here>:<tag> .
 ```
 $ docker run -d -p <port number>:6379 -v $(pwd)/data:/data:rw --name=<container name>-redis redis:6 --save 1 1
 ```
-The output will be the container name
+
+-The output will be the container name
 
 ####  run Flask container - Enter the following:
 
 ```
 $ docker run --name " ml_data_sample" -d -p <port number>:5000 osvasali/ml-data-sample:hw5
 ```
-The output will be the container name
+
+-The output will be the container name
 
 #### edit the IP Address in app.py - Enter the following:
 
-get the container ID
+1)get the container ID
 ```
 $ docker ps -a | grep <redis container name>
 ```
-enter the container ID here to get IP Address
+
+2)enter the container ID here to get IP Address
 ```
 $ docker inspect <redis container id> | grep IPAddress
 ```
