@@ -6,12 +6,12 @@ A Flask container (using a python app) sends and reads data to and from a sepera
 - ```app.py```: this is the python application that uses GET and POST fucntions that output information about the sample data 
 - ```Dockerfile```: creates a an a docker image needed to containerize the application
 - ```requirements.txt```: captures the required libraries and packages for the application in Dockerfile
-##### sample data:
+#### sample data:
 - ```ML_Data_Sample.json```: contains meteorite landings data (mass,location,classification, id number). it is sample data and only includes ids from 10001-10300 
 
 ### Get files
 
-##### Clone the contents of this repository by entering what follows the $ into a terminal or SCP client:
+#### Clone the contents of this repository by entering what follows the $ into a terminal or SCP client:
 
 ```
 $ git clone https://github.com/osvasali/homework05
@@ -19,7 +19,7 @@ $ git clone https://github.com/osvasali/homework05
 
 (other methods for cloning a repository are described here [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
 
-##### Download the sample data by entering what follows the $ into a terminal or SCP client:
+#### Download the sample data by entering what follows the $ into a terminal or SCP client:
 
 ```
 $ wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
@@ -31,12 +31,12 @@ The image may built by using the Dockerfile in this repository.
 Replace `<username>` and `<tag>` with your own username and tag.
 You may replace `<your port number>` with 5027 or another port not in use
 
-##### Enter the following to pull and run a pre-containerized copy of the app
+#### Enter the following to pull and run a pre-containerized copy of the app
 
 ```
 $ docker pull osvasali/ml_data_sample:hw5
 ```
-#####  Enter the following to build and run new image
+####  Enter the following to build and run new image
 
 ```
 $ docker build -t <username>/<name it here>:<tag> .
