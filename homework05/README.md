@@ -48,7 +48,7 @@ $ docker build -t <username>/<name it here>:<tag> .
 $ docker run -d -p <port number>:6379 -v $(pwd)/data:/data:rw --name=<container name>-redis redis:6 --save 1 1
 ```
 
--The output will be the container name
+- The output will be the container name
 
 ####  run Flask container - Enter the following:
 
@@ -56,7 +56,7 @@ $ docker run -d -p <port number>:6379 -v $(pwd)/data:/data:rw --name=<container 
 $ docker run --name " ml_data_sample" -d -p <port number>:5000 osvasali/ml-data-sample:hw5
 ```
 
--The output will be the container name
+- The output will be the container name
 
 #### edit the IP Address in app.py - Enter the following:
 
@@ -69,5 +69,17 @@ $ docker ps -a | grep <redis container name>
 ```
 $ docker inspect <redis container id> | grep IPAddress
 ```
+
+3) use a text editor like emacs or vim to edit app.py
+   - for emacs enter the following:
+    ```
+    $ emacs app.py
+    ```
+    Next in line that says `return redis.Redis(host='172.17.0.16', port=6379, db=0)` chnage `172.17.0.16` to the IP address found in step 2.
+    
+    Close and save:
+    1. `ctrl X` or `cmd X`
+    2. `ctrl S` or `cmd S`
+    3. `ctrl Z` or `cmd Z`
 
 
