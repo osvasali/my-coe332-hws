@@ -25,19 +25,46 @@ $ git clone https://github.com/osvasali/homework05
 $ wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
 ```
 
-## Using Dockerfile
+## Building and Using Containers
 
 The image may built by using the Dockerfile in this repository.
 Replace `<username>` and `<tag>` with your own username and tag.
-You may replace `<your port number>` with 5027 or another port not in use
+You may replace `<port number>` with 5027 Flask and 6427 for Redis or any other port not in use
 
-#### Enter the following to pull and run a pre-containerized copy of the app
+#### Enter the following to pull and run a pre-containerized copy of the app from the docker file:
 
 ```
 $ docker pull osvasali/ml_data_sample:hw5
 ```
-####  Enter the following to build and run new image
+####  Enter the following to build and run new image:
 
 ```
 $ docker build -t <username>/<name it here>:<tag> .
 ```
+
+####  run Redis container - Enter the following:
+
+```
+$ docker run -d -p <port number>:6379 -v $(pwd)/data:/data:rw --name=<container name>-redis redis:6 --save 1 1
+```
+The output will be the container name
+
+####  run Flask container - Enter the following:
+
+```
+$ docker run --name " ml_data_sample" -d -p <port number>:5000 osvasali/ml-data-sample:hw5
+```
+The output will be the container name
+
+#### edit the IP Address in app.py - Enter the following:
+
+get the container ID
+```
+$ docker ps -a | grep <redis container name>
+```
+enter the container ID here to get IP Address
+```
+$ docker inspect <redis container id> | grep IPAddress
+```
+
+
