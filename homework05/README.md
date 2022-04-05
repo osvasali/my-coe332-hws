@@ -91,6 +91,21 @@ $ export FLASK_APP=app.py
 $ export FLASK_ENV=development
 $ flask run -p <port number>
 ```
+Then follow the instructions in the next section using a different tab. You may leave this tab open to see logging messages. Example:
+
+```
+[2022-04-05 09:31:31,573 isp02.tacc.utexas.edu] _internal.py:_log:225 - INFO: 127.0.0.1 - - [05/Apr/2022 09:31:31] "GET /data?start=299 HTTP/1.1" 200 -
+[2022-04-05 09:35:14,210 isp02.tacc.utexas.edu] app.py:data:26 - INFO: 🔎 GETTING DATA...
+[2022-04-05 09:35:14,210 isp02.tacc.utexas.edu] app.py:data:40 - ERROR: START INDEX IS NOT AN INTEGER 😡
+127.0.0.1 - - [05/Apr/2022 09:35:14] "GET /data?start=jfkc HTTP/1.1" 200 -
+[2022-04-05 09:35:14,210 isp02.tacc.utexas.edu] _internal.py:_log:225 - INFO: 127.0.0.1 - - [05/Apr/2022 09:35:14] "GET /data?start=jfkc HTTP/1.1" 200 -
+ * Detected change in '/home/osvasali/my-coe332-hws/homework05/app.py', reloading
+[2022-04-05 09:36:53,317 isp02.tacc.utexas.edu] _internal.py:_log:225 - INFO:  * Detected change in '/home/osvasali/my-coe332-hws/homework05/app.py', reloading
+[2022-04-05 09:36:53,374 isp02.tacc.utexas.edu] _internal.py:_log:225 - INFO:  * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 768-430-896
+[2022-04-05 09:37:01,714 isp02.tacc.utexas.edu] app.py:data:18 - INFO: 💾 LOADING DATA...
+```
 
 ## Interpret the Results
 Examples for POST, GET, and GET with start query:
@@ -154,8 +169,8 @@ Examples for POST, GET, and GET with start query:
   
       `$ localhost:<your flask port number>/data?start=<starting index> -X GET`. Replace `<starting index>` with a number from 1 to 300
       
-      -output a shortened version of data set
-      -includes the start index at the end of output message
+      - output a shortened version of data set
+      - includes the start index at the end of output message
       
       ```
       [username@isp02 homework05]$ curl localhost:5027/data?start=299 -X GET
