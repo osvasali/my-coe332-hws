@@ -60,12 +60,12 @@ $ docker run --name " ml_data_sample" -d -p <port number>:5000 osvasali/ml-data-
 
 #### edit the IP Address in app.py - Enter the following:
 
-1)get the container ID
+1) get the container ID
 ```
 $ docker ps -a | grep <redis container name>
 ```
 
-2)enter the container ID here to get IP Address
+2) enter the container ID here to get IP Address
 ```
 $ docker inspect <redis container id> | grep IPAddress
 ```
