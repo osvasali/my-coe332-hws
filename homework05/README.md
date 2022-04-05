@@ -72,6 +72,7 @@ $ docker inspect <redis container id> | grep IPAddress
 
 3) use a text editor like emacs or vim to edit app.py
    - for emacs enter the following:
+
     ```
     $ emacs app.py
     ```
