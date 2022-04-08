@@ -17,7 +17,7 @@ def data() -> str:
     if request.method == 'POST':
         logging.info("\U0001F4BE LOADING DATA...")
         global ML_data
-        with open('_ML_Data_Sample.json' , 'r') as f:
+        with open('ML_Data_Sample.json' , 'r') as f:
             ML_data =  json.load(f)
         for d in ML_data['meteorite_landings']:
             rd.set(d['id'],json.dumps(d))
