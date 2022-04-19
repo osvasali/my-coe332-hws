@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw6-test-redis
+  labels:
+    app: hw6-test-redis
+    env: test
+    username: osvasali
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hw6-osvasali-test-redis
+  template:
+    metadata:
+      labels:
+        app: hw6-osvasali-test-redis
+        env: test
+        username: osvasali
+    spec:
+      containers:
+        - name: redis-database
+          image: redis:6
+          ports:
+          - name: http
+            containerPort: 6379
+          volumeMounts:
+            - name: redis-test-volume
+              mountPath: "/data"
+      volumes:
+        - name: redis-test-volume
+          persistentVolumeClaim:
+            claimName: redis-test-volume
