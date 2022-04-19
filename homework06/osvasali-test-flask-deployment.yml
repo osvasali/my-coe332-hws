@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw6-test-flask
+  labels:
+    app: hw6-test-flask
+    env: test
+    username: osvasali
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hw6-osvasali-test-flask
+  template:
+    metadata:
+      labels:
+        app: hw6-osvasali-test-flask
+        env: test
+        username: osvasali
+    spec:
+      containers:
+        - name: hw6-test-flask
+          imagePullPolicy: Always
+          image: osvasali/hw6-test-flask:0.1
+          command: ['python3', 'core.py', ip_address]
+          ports:
+          - name: http
+            containerPort: 5000
