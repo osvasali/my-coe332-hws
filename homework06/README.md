@@ -54,36 +54,29 @@ root@py-debug-deployment-5dfcf7bdd9-pfrdv:/#
 ```
 You're now in the pod. You can access the Flask API with the service's unique IP address and the port ```5000``` by ```curl```ing the route ```/data```. First load the data with the ```-X POST``` verb, then you can retrieve it without explicitly writing the ```GET``` verb.
 ``` bash
-root@py-debug-deployment-5dfcf7bdd9-pfrdv:/# curl -X POST 10.97.210.193:5000/data
-Data has been loaded!
-root@py-debug-deployment-5dfcf7bdd9-pfrdv:/# curl 10.97.210.193:5000/data
-[
- {
-  "name": "Gerald",
-  "id": "10001",
-  "recclass": "H4",
-  "mass (g)": "5754",
-  "reclat": "-75.6691",
-  "reclong": "60.6936",
-  "GeoLocation": "(-75.6691, 60.6936)"
- },
- {
-  "name": "Dominique",
-  "id": "10002",
-  "recclass": "L6",
-  "mass (g)": "1701",
-  "reclat": "-9.4378",
-  "reclong": "49.5751",
-  "GeoLocation": "(-9.4378, 49.5751)"
- },
- {
-  "name": "Malinda",
-  "id": "10003",
-  "recclass": "CI1",
-  "mass (g)": "3482",
-  "reclat": "35.3692",
-  "reclong": "61.4206",
-  "GeoLocation": "(35.3692, 61.4206)"
- },
+root@py-debug-deployment-5dfcf7bdd9-pfrdv:/# curl 10.104.235.83:5000/data -X POST
+✅ Loading Complete ✅
+root@py-debug-deployment-5dfcf7bdd9-pfrdv:/# curl 10.104.235.83:5000/data?start=299 -X GET
+      [
+       {
+        "name": "Jennifer",
+        "id": "10299",
+        "recclass": "L5",
+        "mass (g)": "539",
+        "reclat": "-84.0579",
+        "reclong": "69.9994",
+        "GeoLocation": "(-84.0579, 69.9994)"
+       },
+       {
+        "name": "Christina",
+        "id": "10300",
+        "recclass": "H5",
+        "mass (g)": "4291",
+        "reclat": "-38.1533",
+        "reclong": "-46.7127",
+        "GeoLocation": "(-38.1533, -46.7127)"
+       }
+      ]
+
+      🤓 DATA AT START INDEX 299
 ```
-You are now free to load retrieve your data!
