@@ -6,7 +6,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: hw6-test-flask
+    app: hw6-osvasali-test-flask
   ports:
   - name: hw6-test
     port: 5000
