@@ -41,5 +41,5 @@ def data() -> str:
             return '\U0000274C Could not convert data to an integer. \U0000274C\n\a'
         return "ROUTE NOT FOUND\n\a"
     
-    if __name__ == '__main__':
+if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
