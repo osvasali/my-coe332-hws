@@ -52,7 +52,7 @@ Now execute a command in your Python debug pod with:
 [user@f5p ~]$ kubectl exec -it <python-debug-NAME> /bin/bash
 root@py-debug-deployment-5dfcf7bdd9-pfrdv:/#
 ```
-You're now in the pod. You can access the Flask API with the service's unique IP address and the port ```5000``` by ```curl```ing the route ```/data```. First load the data with the ```-X POST``` verb, then you can retrieve it without explicitly writing the ```GET``` verb.
+You're now in the pod. You can access the Flask API with the service's unique IP address and the port ```5000``` by curling the route ```/data```. First load the data with the ```-X POST``` verb, then you can retrieve it without explicitly writing the ```GET``` verb.
 ``` bash
 root@py-debug-deployment-5dfcf7bdd9-pfrdv:/# curl 10.104.235.83:5000/data -X POST
 ✅ Loading Complete ✅
