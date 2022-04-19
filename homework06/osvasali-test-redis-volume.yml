@@ -4,7 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: redis-test-volume
   labels:
-    app: hw6-test
+    app: hw6-test-redis
     env: test
     username: osvasali
 spec:
