@@ -22,8 +22,8 @@ spec:
       containers:
         - name: hw6-test-flask
           imagePullPolicy: Always
-          image: osvasali/hw6-test-flask:0.1
-          command: ['python3', 'core.py', ip_address]
+          image: osvasali/hw6-kube:0.1
+          command: ['python3', 'app.py']
           ports:
           - name: http
             containerPort: 5000
