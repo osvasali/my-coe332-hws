@@ -9,12 +9,14 @@ Kubernetes (k8s) are used to deploy a Flask API that uses Redis to create a test
 - ```osvasali-test-flask-deployment.yml```: Creates a deployment (with two replicas) for the Flask API
 - ```osvasali-test-flask-service.yml```: Provides a persistent IP address to use that is able to interact with the API
 
-## Downloading the Meteorite Landings Dataset 
-To have the necessary datasets to interact with the API, you need to have the ```json``` files downloaded into your repository. To access the meteorite landings dataset you can download it to your project directory with the following command:
 
-```bash
-[user@f5p ~]$ wget https://raw.githubusercontent.com/wjallen/coe332-sample-data/main/ML_Data_Sample.json
+## Clone the contents of this repository by entering what follows the $ into a terminal or SCP client:
+
 ```
+$ git clone https://github.com/osvasali/homework05
+```
+
+(other methods for cloning a repository are described here [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
 
 ## Running in Kubernetes
 Once you've logged onto your Kubernetes cluster, ensure you have a Python debug pod to use for running the API. To apply a configuration of all ```yml``` files use the following command for each of the 5 ```yml``` files:
