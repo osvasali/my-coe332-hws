@@ -10,7 +10,7 @@ Kubernetes (k8s) are used to deploy a Flask API that uses Redis to create a test
 - ```osvasali-test-flask-service.yml```: Provides a persistent IP address to use that is able to interact with the API
 
 
-## Clone the contents of this repository by entering what follows the $ into a terminal or SCP client:
+#### Clone the contents of this repository by entering what follows the $ into a terminal or SCP client:
 
 ```
 $ git clone https://github.com/osvasali/homework05
@@ -18,24 +18,38 @@ $ git clone https://github.com/osvasali/homework05
 
 (other methods for cloning a repository are described here [here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository))
 
-## Running in Kubernetes
-Once you've logged onto your Kubernetes cluster, ensure you have a Python debug pod to use for running the API. To apply a configuration of all ```yml``` files use the following command for each of the 5 ```yml``` files:
+## Kubernetes Deployment
+login to kubernetes cluster:
+
+```
+$ ssh <tacc_username>@coe332-k8s.tacc.cloud
+```
+
+Once you've logged onto your Kubernetes cluster, use the following command to apply a configuration for each of the 5 ```yml``` files:
 ``` bash
 [user@f5p ~]$ kubectl apply -f <file name>
 ```
-This creates various Kubernetes resources for each file of types ```pvc```, ```pods```, ```deployments```, and ```services```. To check the IDs of your resources execute:
+
+example:
+
+``` bash
+[user@f5p ~]$ kubectl apply -f osvasali-test-redis-service.yml
+```
+
+To see all the ```pvc```, ```pods```, ```deployments```, and ```services``` that have been aplied and check their NAMEs and statuses enter this:
+
 ``` bash
 [user@f5p ~]$ kubectl get all -o wide
 ```
 Find the IP address of your Flask service with:
 ``` bash
 [user@f5p ~]$ kubectl get services
-NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
-s-shah-flask-service   ClusterIP   10.97.210.193    <none>        5000/TCP   3h6m
+NAME                             TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE     SELECTOR
+service/hw6-flask-test-service   ClusterIP   10.104.235.83    <none>        5000/TCP   47m     app=hw6-test-flask
 ```
 Now execute a command in your Python debug pod with:
 ``` bash
-[user@f5p ~]$ kubectl exec -it <python-debug-ID> /bin/bash
+[user@f5p ~]$ kubectl exec -it <python-debug-NAME> /bin/bash
 root@py-debug-deployment-5dfcf7bdd9-pfrdv:/#
 ```
 You're now in the pod. You can access the Flask API with the service's unique IP address and the port ```5000``` by ```curl```ing the route ```/data```. First load the data with the ```-X POST``` verb, then you can retrieve it without explicitly writing the ```GET``` verb.
