@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hw6-test-flask
+  name: hw6-osvasali-test-flask
   labels:
-    app: hw6-test-flask
+    app: hw6-osvasali-test-flask
     env: test
     username: osvasali
 spec:
@@ -20,7 +20,7 @@ spec:
         username: osvasali
     spec:
       containers:
-        - name: hw6-test-flask
+        - name: hw6-osvasali-test-flask
           imagePullPolicy: Always
           image: osvasali/hw6-kube:0.1
           command: ['python3', 'app.py']
