@@ -3,9 +3,10 @@ Kubernetes (k8s) are used to deploy a Flask API that uses Redis to create a test
 
 FIles in the `homework05` directory:
 - ```Dockerfile```: creates a an a docker image needed to containerize the application.
-- ```requirements.txt```: imports flask and redis to docker container.
+- ```requirements.txt```: imports Flask and Redis to docker container.
 - ```app.py```: this is the python application that uses GET and POST fucntions that output information about the sample data
- yaml files used to make pods with Redis and Flask:
+ 
+ `yml` files used to make pods with Redis and Flask:
 - ```osvasali-test-redis-deployment.yml```: Creates a deployment for the Redis database
 - ```osvasali-test-redis-volume.yml```: Stores the data written to it from the deployment file independently from the pods
 - ```osvasali-test-redis-service.yml```: Provides a persistent IP address to use that is able to interact with Redis
