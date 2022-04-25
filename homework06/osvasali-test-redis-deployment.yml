@@ -2,9 +2,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hw6-test-redis
+  name: hw6-osvasali-test-redis-deployment
   labels:
-    app: hw6-test-redis
+    app: hw6-osvasali-test-redis
     env: test
     username: osvasali
 spec:
