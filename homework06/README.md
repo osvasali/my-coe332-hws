@@ -1,6 +1,9 @@
 # Using Kubernetes to Read Meteorite Landings Data
 Kubernetes (k8s) are used to deploy a Flask API that uses Redis to create a test environment for the application. The application reads meteorite landing data from a json file and oututs the result to the user.
+
+FIles in the `homework05` directory:
 - ```Dockerfile```: creates a an a docker image needed to containerize the application.
+- ```requirements.txt```: imports flask and redis to docker container.
 - ```app.py```: this is the python application that uses GET and POST fucntions that output information about the sample data
  yaml files used to make pods with Redis and Flask:
 - ```osvasali-test-redis-deployment.yml```: Creates a deployment for the Redis database
@@ -8,6 +11,7 @@ Kubernetes (k8s) are used to deploy a Flask API that uses Redis to create a test
 - ```osvasali-test-redis-service.yml```: Provides a persistent IP address to use that is able to interact with Redis
 - ```osvasali-test-flask-deployment.yml```: Creates a deployment (with two replicas) for the Flask API
 - ```osvasali-test-flask-service.yml```: Provides a persistent IP address to use that is able to interact with the API
+- ```deployment-python-debug.yml```: used to debug flask apps in k8s
 
 
 #### Clone the contents of this repository by entering what follows the $ into a terminal or SCP client:
