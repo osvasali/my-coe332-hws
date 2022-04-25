@@ -4,17 +4,14 @@ kind: Service
 metadata:
   name: redis-test-service
   labels:
-    app: redis-test-service
+    app: hw6-osvasali-test-redis
     env: test
     username: osvasali
 spec:
   type: ClusterIP
   selector:
     app: hw6-osvasali-test-redis
-    name: database
-    env: test
-    username: osvasali
   ports:
-  - name: hw6-test
-    port: 6427
+  - name: hw6-osvasali-test-redis
+    port: 6379
     targetPort: 6379
