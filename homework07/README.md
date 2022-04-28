@@ -41,7 +41,7 @@ The user of the application begins by making an HTTP request that explains how t
 $ curl localhost:<port number>/help
 ```
 
-### Output Instructions - ```Orange Circle```
+### <span id="instructions"></span>Output Instructions - ```Orange Circle```
 
 Output below explains how to download the data and lists of the routes:
 
@@ -95,57 +95,114 @@ If the data loaded without errors, then the user will make an HTTP request to ou
 
 The user will make an HTTP request as shown in the [How to Interact with the Application](#how-to-interact-with-the-application) section.
 
-The possible requests are shown in this [output](#output-instructions).
+The possible requests are shown in this [output](#instructions).
 
 ### Epoch Data? - ```Yellow Diamond```
 
-If it is epoch data go [here](#epochs).
+The user may make a request to either output the position and velocity data of the ISS (epochs) or output the places the ISS was sighted (countries).
 
-If it is country data go [here](#countries).
-
+If the user requested epoch data go [here](#epochs).
+If the user requested country data go [here](#countries).
 
 ### <span id="epochs"></span>All Epochs? - ```Yellow Diamond```
 
+The user may output data for every epoch or data for a specific epoch. Below are example outputs for both:
+
+#### Output Every Epoch's Data - ```Orange Circle```
+
+```
+...
+2022-057T10:12:56.869Z
+2022-057T10:16:56.869Z
+2022-057T10:20:56.869Z
+2022-057T10:24:56.869Z
+2022-057T10:28:56.869Z
+2022-057T10:32:56.869Z
+2022-057T10:36:56.869Z
+2022-057T10:40:56.869Z
+2022-057T10:44:56.869Z
+2022-057T10:48:56.869Z
+2022-057T10:52:56.869Z
+2022-057T10:56:56.869Z
+2022-057T11:00:56.869Z
+2022-057T11:04:56.869Z
+2022-057T11:08:56.869Z
+2022-057T11:12:56.869Z
+2022-057T11:16:56.869Z
+2022-057T11:20:56.869Z
+2022-057T11:24:56.869Z
+2022-057T11:28:56.869Z
+2022-057T11:32:56.869Z
+2022-057T11:36:56.869Z
+2022-057T11:40:56.869Z
+2022-057T11:44:56.869Z
+2022-057T11:48:56.869Z
+2022-057T11:52:56.869Z
+2022-057T11:56:56.869Z
+2022-057T12:00:00.000Z
+...
+```
+
+#### Output Data for an Epoch - ```Orange Circle```
+
+```
+{
+  "X": {
+    "#text": "-4945.2048874258298",
+    "@units": "km"
+  },
+  "X_DOT": {
+    "#text": "1.19203952554952",
+    "@units": "km/s"
+  },
+  "Y": {
+    "#text": "-3625.9704508659102",
+    "@units": "km"
+  },
+  "Y_DOT": {
+    "#text": "-5.67286420497775",
+    "@units": "km/s"
+  },
+  "Z": {
+    "#text": "-2944.7433487186099",
+    "@units": "km"
+  },
+  "Z_DOT": {
+    "#text": "4.99593211898374",
+    "@units": "km/s"
+  }
+}
+```
+
 ### <span id="countries"></span>All Countries? - ```Yellow Diamond```
 
-### Specific Country? - ```Yellow Diamond```
+The user may output data for every country or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
 
-### All Regions? - ```Yellow Diamond```
+#### Output Every Country's Data - ```Orange Circle```
 
-### Specific Region? - ```Yellow Diamond```
+### <span id="country"></span>Specific Country? - ```Yellow Diamond```
 
-### All Cities? - ```Yellow Diamond```
+The user may output data for a specific country or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
 
-### Output Every Epoch's Data - ```Orange Circle```
-### Output Data for an Epoch - ```Orange Circle```
-### Output Every Country's Data - ```Orange Circle```
-### Output Data for a Country - ```Orange Circle```
-### Output Every Region's Data - ```Orange Circle```
-### Output Data for a Region - ```Orange Circle```
-### Output Every City's Data - ```Orange Circle```
-### Output Data for a City - ```Orange Circle```
+#### Output Data for a Country - ```Orange Circle```
 
-<span id="a"></span>
-[here](#epochs)
+### <span id="regions"></span>All Regions? - ```Yellow Diamond```
 
-*
-*
-*
-*
-*
-*
+The user may output data for every region or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
 
-*
-*
-*
-*
-*
-*
-*
-*
+#### Output Every Region's Data - ```Orange Circle```
+
+### <span id="region"></span>Specific Region? - ```Yellow Diamond```
+
+The user may output data for a specific region or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
+
+#### Output Data for a Region - ```Orange Circle```
+
+### <span id="cities"></span>All Cities? - ```Yellow Diamond```
+
+The user may output data for every region or data for a speccific city. Below are example outputs for both:
 
 
-
-
-
+#### Output Every City's Data - ```Orange Circle```
+#### Output Data for a City - ```Orange Circle```
 
