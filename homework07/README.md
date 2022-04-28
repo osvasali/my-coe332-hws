@@ -101,7 +101,7 @@ The possible requests are shown in this [output](#instructions).
 
 The user may make a request to either output the position and velocity data of the ISS (epochs) or output the places the ISS was sighted (countries).
 
-If the user requested epoch data go [here](#epochs).
+If the user requested epoch data go [here](#epochs). <br >
 If the user requested country data go [here](#countries).
 
 ### <span id="epochs"></span>All Epochs? - ```Yellow Diamond```
