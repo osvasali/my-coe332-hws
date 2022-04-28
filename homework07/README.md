@@ -178,11 +178,66 @@ The user may output data for every epoch or data for a specific epoch. Below are
 
 The user may output data for every country or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
 
+```
+ --Sightings per Country--
+
+{
+  "United_States": 4857
+}
+
+ There are 1 countries with sightings found
+```
+
 #### Output Every Country's Data - ```Orange Circle```
 
 ### <span id="country"></span>Specific Country? - ```Yellow Diamond```
 
 The user may output data for a specific country or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
+
+```
+[
+  {
+    "region": "Massachusetts",
+    "city": "Natick",
+    "spacecraft": "ISS",
+    "sighting_date": "Thu Feb 17/05:41 AM",
+    "duration_minutes": "5",
+    "max_elevation": "19",
+    "enters": "10 above S",
+    "exits": "10 above E",
+    "utc_offset": "-5.0",
+    "utc_time": "10:41",
+    "utc_date": "Feb 17, 2022"
+  },
+...
+  {
+    "region": "New_Jersey",
+    "city": "Green_Creek",
+    "spacecraft": "ISS",
+    "sighting_date": "Fri Feb 25/05:42 AM",
+    "duration_minutes": "3",
+    "max_elevation": "13",
+    "enters": "11 above NW",
+    "exits": "10 above NNE",
+    "utc_offset": "-5.0",
+    "utc_time": "10:42",
+    "utc_date": "Feb 25, 2022"
+  },
+  {
+    "region": "New_Jersey",
+    "city": "Green_Creek",
+    "spacecraft": "ISS",
+    "sighting_date": "Sat Feb 26/04:56 AM",
+    "duration_minutes": "2",
+    "max_elevation": "16",
+    "enters": "16 above N",
+    "exits": "10 above NNE",
+    "utc_offset": "-5.0",
+    "utc_time": "09:56",
+    "utc_date": "Feb 26, 2022"
+  }
+]
+```
 
 #### Output Data for a Country - ```Orange Circle```
 
@@ -192,11 +247,74 @@ The user may output data for every region or data for an area with a smaller sco
 
 #### Output Every Region's Data - ```Orange Circle```
 
+```
+--Sightings per Region--
+
+{
+  "Massachusetts": 447,
+  "Michigan": 1870,
+  "Minnesota": 545,
+  "Mississippi": 216,
+  "Missouri": 541,
+  "Montana": 235,
+  "Nebraska": 311,
+  "Nevada": 133,
+  "New_Hampshire": 310,
+  "New_Jersey": 249
+}
+
+ There are 10 regions with sightings in United_States
+```
+
 ### <span id="region"></span>Specific Region? - ```Yellow Diamond```
 
 The user may output data for a specific region or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
 
 #### Output Data for a Region - ```Orange Circle```
+
+```
+{
+  "Nevada": [
+    {
+      "city": "Carson_City",
+      "spacecraft": "ISS",
+      "sighting_date": "Thu Feb 17/05:46 AM",
+      "duration_minutes": "6",
+      "max_elevation": "24",
+      "enters": "10 above S",
+      "exits": "10 above ENE",
+      "utc_offset": "-8.0",
+      "utc_time": "13:46",
+      "utc_date": "Feb 17, 2022"
+    },
+    {
+      "city": "Carson_City",
+      "spacecraft": "ISS",
+      "sighting_date": "Fri Feb 18/04:59 AM",
+      "duration_minutes": "4",
+      "max_elevation": "14",
+      "enters": "10 above SSE",
+      "exits": "10 above E",
+      "utc_offset": "-8.0",
+      "utc_time": "12:59",
+      "utc_date": "Feb 18, 2022"
+    },
+    ...
+    {
+      "city": "Winnemucca",
+      "spacecraft": "ISS",
+      "sighting_date": "Fri Feb 25/05:48 AM",
+      "duration_minutes": "4",
+      "max_elevation": "16",
+      "enters": "10 above NW",
+      "exits": "10 above NNE",
+      "utc_offset": "-8.0",
+      "utc_time": "13:48",
+      "utc_date": "Feb 25, 2022"
+    }
+  ]
+}
+```
 
 ### <span id="cities"></span>All Cities? - ```Yellow Diamond```
 
