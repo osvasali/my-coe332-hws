@@ -20,9 +20,7 @@ The following is a key for the behavioral diagram:
 
 ![](https://github.com/osvasali/my-coe332-hws/blob/main/homework07/Key.png)
 
-## Behaviors
-
-##### How to Interact with the Application
+# How to Interact with the Application
 
 The user interacts with the application by replacing  `<port number>` with their port number and
 `<route>` with the one of the routes shown in the help output. These will be the inputs (HTTP requests) shown as a teal rhombus in the behavioral diagram.
