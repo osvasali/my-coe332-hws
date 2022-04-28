@@ -99,10 +99,10 @@ The possible requests are shown in this [output](#output-instructions).
 
 ### Epoch Data? - ```Yellow Diamond```
 
-<span id="epochs"></span>
-[here](#epochs).
-<span id="countries"></span>
-[here](#countries).
+If it is epoch data go [here](#epochs).
+
+If it is country data go [here](#countries).
+
 
 ### <span id="epochs"></span>All Epochs? - ```Yellow Diamond```
 
@@ -126,7 +126,7 @@ The possible requests are shown in this [output](#output-instructions).
 ### Output Data for a City - ```Orange Circle```
 
 <span id="a"></span>
-[here](#a)
+[here](#epochs)
 
 *
 *
