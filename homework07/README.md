@@ -97,7 +97,16 @@ The user will make an HTTP request as shown in the [How to Interact with the App
 
 The possible requests are shown in this [output](#output-instructions).
 
+### Epoch Data? - ```Yellow Diamond```
 
+### All Countries? - ```Yellow Diamond```
 
+### Specific Country? - ```Yellow Diamond```
+
+### All Regions? - ```Yellow Diamond```
+
+### Specific Region? - ```Yellow Diamond```
+
+### All Cities? - ```Yellow Diamond```
 
 
