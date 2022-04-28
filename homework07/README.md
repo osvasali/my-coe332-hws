@@ -77,7 +77,7 @@ FIRST LOAD DATA USING THE FOLLOWING PATH: /load -X POST
 
 ```
 
-### Input Load Route - ```Teal Rhombus```
+## Input Load Route - ```Teal Rhombus```
 
 The user then inputs the HTTP request to load the data to the application.
 
@@ -91,7 +91,7 @@ $ curl localhost:<port number>/load -X POST
 
 If the data loaded without errors, then the user will make an HTTP request to output data. If there were errors in loading, then the user will input the help route again.
 
-### Input Data Route - ```Teal Rhombus```
+## Input Data Route - ```Teal Rhombus```
 
 The user will make an HTTP request as shown in the [How to Interact with the Application](#how-to-interact-with-the-application) section.
 
