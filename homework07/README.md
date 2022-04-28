@@ -24,18 +24,16 @@ The following is a key for the behavioral diagram:
 
 **How to Interact with the Application**
 
-The user interacts with the application by replacing  `<your port number>` with their port number and
-`<route>` with the one of the routes shown in the help output. These will be the inputs shown as a teal rhombus in the behavioral diagram.
+The user interacts with the application by replacing  `<port number>` with their port number and
+`<route>` with the one of the routes shown in the help output. These will be the inputs (HTTP requests) shown as a teal rhombus in the behavioral diagram.
 
 ```
-$ curl localhost:<your port number>/<route>
+$ curl localhost:<port number>/<route>
 ```
 
-### Input Help Route
+### Input Help Route - ```Teal Rhombus```
 
 The user of the application begins by making an HTTP request that explains how to load the data and output it.
-
-
 
 #### `/help` - shows list of routes
 
@@ -49,8 +47,11 @@ Output below explains how to download the data and lists of the routes:
  
 FIRST LOAD DATA USING THE FOLLOWING PATH: /load -X POST
 
-    IF THERE ARE ERRORS LOAD THE DATA ONCE MORE
-
+    
+    IF THERE ARE ERRORS ENTER THE FOLLOWING COMMANDS THEN LOAD THE DATA ONCE MORE
+    
+    $ wget https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_OEM/ISS.OEM_J2K_EPH.xml
+    $ wget https://nasa-public-data.s3.amazonaws.com/iss-coords/2022-02-13/ISS_sightings/XMLsightingData_citiesUSA06.xml
 
     Navigation:
 
@@ -72,4 +73,14 @@ FIRST LOAD DATA USING THE FOLLOWING PATH: /load -X POST
       8. /countries/<country>/regions/<region>/cities/<cities>
           #data for specific city
 
+```
+
+### Input Load Route - ```Teal Rhombus```
+
+The user then inputs the HTTP request to load the data to the application.
+
+#### `/load` - loads data from XML files
+
+```
+$ curl localhost:<your port number>/load -X POST
 ```
