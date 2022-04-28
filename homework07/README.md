@@ -2,12 +2,6 @@
 
 ![](https://github.com/osvasali/my-coe332-hws/blob/main/homework07/trackingAppFlowchart.png)
 
-## Application Description
-
-This application outputs data for the position and velocity of the International Space Station (ISS), as well as the places around the world where the ISS was sighted. The application does this by collecting data from XML files and making them easier for a person to read the country, region, city, time, position in cartesian coordinates, units of velocity, magnitude of velocity, and other details associated with the ISS for a particular sighting or epoch.
-
-The repository for the application may be found [here](https://github.com/osvasali/ISS-Tracking-Application-Using-Flask).
-
 ## Key
 
 The following is a key for the behavioral diagram:
@@ -20,6 +14,12 @@ The following is a key for the behavioral diagram:
 
 ![](https://github.com/osvasali/my-coe332-hws/blob/main/homework07/Key.png)
 
+## Application Description
+
+This application outputs data for the position and velocity of the International Space Station (ISS), as well as the places around the world where the ISS was sighted. The application does this by collecting data from XML files and making them easier for a person to read the country, region, city, time, position in cartesian coordinates, units of velocity, magnitude of velocity, and other details associated with the ISS for a particular sighting or epoch.
+
+The repository for the application may be found [here](https://github.com/osvasali/ISS-Tracking-Application-Using-Flask).
+
 # How to Interact with the Application
 
 The user interacts with the application by replacing  `<port number>` with their port number and
@@ -29,6 +29,7 @@ The user interacts with the application by replacing  `<port number>` with their
 $ curl localhost:<port number>/<route>
 ```
 
+The following sections describe the shapes in the behavioral diagram shown above.
 
 
 ## Input Help Route - ```Teal Rhombus```
