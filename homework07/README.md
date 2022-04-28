@@ -318,7 +318,7 @@ The user may output data for a specific region or data for an area with a smalle
 
 ### <span id="cities"></span>All Cities? - ```Yellow Diamond```
 
-The user may output data for every region or data for a speccific city. Below are example outputs for both:
+The user may output data for every region or data for a specific city. Below are example outputs for both:
 
 #### Output Every City's Data - ```Orange Circle```
 
