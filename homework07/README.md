@@ -99,7 +99,14 @@ The possible requests are shown in this [output](#output-instructions).
 
 ### Epoch Data? - ```Yellow Diamond```
 
-### All Countries? - ```Yellow Diamond```
+<span id="epochs"></span>
+[here](#epochs).
+<span id="countries"></span>
+[here](#countries).
+
+### <span id="epochs"></span>All Epochs? - ```Yellow Diamond```
+
+### <span id="countries"></span>All Countries? - ```Yellow Diamond```
 
 ### Specific Country? - ```Yellow Diamond```
 
@@ -108,5 +115,37 @@ The possible requests are shown in this [output](#output-instructions).
 ### Specific Region? - ```Yellow Diamond```
 
 ### All Cities? - ```Yellow Diamond```
+
+### Output Every Epoch's Data - ```Orange Circle```
+### Output Data for an Epoch - ```Orange Circle```
+### Output Every Country's Data - ```Orange Circle```
+### Output Data for a Country - ```Orange Circle```
+### Output Every Region's Data - ```Orange Circle```
+### Output Data for a Region - ```Orange Circle```
+### Output Every City's Data - ```Orange Circle```
+### Output Data for a City - ```Orange Circle```
+
+<span id="a"></span>
+[here](#a)
+
+*
+*
+*
+*
+*
+*
+
+*
+*
+*
+*
+*
+*
+*
+*
+
+
+
+
 
 
