@@ -22,7 +22,7 @@ The following is a key for the behavioral diagram:
 
 ## Behaviors
 
-**How to Interact with the Application**
+##### How to Interact with the Application
 
 The user interacts with the application by replacing  `<port number>` with their port number and
 `<route>` with the one of the routes shown in the help output. These will be the inputs (HTTP requests) shown as a teal rhombus in the behavioral diagram.
@@ -38,9 +38,11 @@ The user of the application begins by making an HTTP request that explains how t
 #### `/help` - shows list of routes
 
 ```
-$ curl localhost:<your port number>/help
+$ curl localhost:<port number>/help
 ```
- 
+
+### Output Instructions - ```Orange Circle```
+
 Output below explains how to download the data and lists of the routes:
 
 ```
@@ -82,5 +84,16 @@ The user then inputs the HTTP request to load the data to the application.
 #### `/load` - loads data from XML files
 
 ```
-$ curl localhost:<your port number>/load -X POST
+$ curl localhost:<port number>/load -X POST
 ```
+
+### Did the Data Load? - ```Yellow Diamond```
+
+If the data loaded without errors, then the user will make an HTTP request to output data. If there were errors in loading, then the user will input the help route again.
+
+### Input Data Route
+
+The user will input the data as shown in the [How to Interact with the Application](#how-to-interact-with-the-application) section
+
+
+
