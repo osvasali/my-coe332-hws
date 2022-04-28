@@ -19,3 +19,57 @@ The following is a key for the behavioral diagram:
 - ```Yellow Diamond```: Contains a condition that asks what type of input was made
 
 ![](https://github.com/osvasali/my-coe332-hws/blob/main/homework07/Key.png)
+
+## Behaviors
+
+**How to Interact with the Application**
+
+The user interacts with the application by replacing  `<your port number>` with their port number and
+`<route>` with the one of the routes shown in the help output. These will be the inputs shown as a teal rhombus in the behavioral diagram.
+
+```
+$ curl localhost:<your port number>/<route>
+```
+
+### Input Help Route
+
+The user of the application begins by making an HTTP request that explains how to load the data and output it.
+
+
+
+#### `/help` - shows list of routes
+
+```
+$ curl localhost:<your port number>/help
+```
+ 
+Output below explains how to download the data and lists of the routes:
+
+```
+ 
+FIRST LOAD DATA USING THE FOLLOWING PATH: /load -X POST
+
+    IF THERE ARE ERRORS LOAD THE DATA ONCE MORE
+
+
+    Navigation:
+
+    Use the following routes to access the data:
+      1.  /epochs
+          #lists all epochs
+      2.  /epochs/<epoch>
+          #data for specific epoch
+      3.  /countries
+          #lists all countries
+      4.  /countries/<country>
+          #data for specific country
+      5.  /countries/<country>/regions
+          #lists all regions
+      6.  /countries/<country>/regions/<region>
+          #data for specific region
+      7.  /countries/<country>/regions/<region>/cities
+          #lists all cities
+      8. /countries/<country>/regions/<region>/cities/<cities>
+          #data for specific city
+
+```
