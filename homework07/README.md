@@ -31,7 +31,9 @@ The user interacts with the application by replacing  `<port number>` with their
 $ curl localhost:<port number>/<route>
 ```
 
-### Input Help Route - ```Teal Rhombus```
+
+
+## Input Help Route - ```Teal Rhombus```
 
 The user of the application begins by making an HTTP request that explains how to load the data and output it.
 
