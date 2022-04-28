@@ -178,6 +178,8 @@ The user may output data for every epoch or data for a specific epoch. Below are
 
 The user may output data for every country or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
 
+#### Output Every Country's Data - ```Orange Circle```
+
 ```
  --Sightings per Country--
 
@@ -188,11 +190,11 @@ The user may output data for every country or data for an area with a smaller sc
  There are 1 countries with sightings found
 ```
 
-#### Output Every Country's Data - ```Orange Circle```
-
 ### <span id="country"></span>Specific Country? - ```Yellow Diamond```
 
 The user may output data for a specific country or data for an area with a smaller scope. The output below is shown to the user if the answer to the condition is a yes:
+
+#### Output Data for a Country - ```Orange Circle```
 
 ```
 [
@@ -238,8 +240,6 @@ The user may output data for a specific country or data for an area with a small
   }
 ]
 ```
-
-#### Output Data for a Country - ```Orange Circle```
 
 ### <span id="regions"></span>All Regions? - ```Yellow Diamond```
 
@@ -320,7 +320,58 @@ The user may output data for a specific region or data for an area with a smalle
 
 The user may output data for every region or data for a speccific city. Below are example outputs for both:
 
-
 #### Output Every City's Data - ```Orange Circle```
+
+```
+--Cities with Sightings--
+
+{
+  "city 1": "Carson_City",
+  "city 2": "Elko",
+  "city 3": "Ely",
+  "city 4": "Fallon",
+  "city 5": "Great_Basin_National_Park",
+  "city 6": "Las_Vegas",
+  "city 7": "Mesquite",
+  "city 8": "Reno",
+  "city 9": "Silver_Springs",
+  "city 10": "Tonopah",
+  "city 11": "Winnemucca"
+}
+
+ There are 11 cities with sightings in Nevada
+```
+
 #### Output Data for a City - ```Orange Circle```
 
+```
+{
+  "Reno": [
+    {
+      "spacecraft": "ISS",
+      "sighting_date": "Thu Feb 17/05:46 AM",
+      "duration_minutes": "5",
+      "max_elevation": "23",
+      "enters": "10 above S",
+      "exits": "10 above ENE",
+      "utc_offset": "-8.0",
+      "utc_time": "13:46",
+      "utc_date": "Feb 17, 2022"
+    },
+    ...
+    {
+      "spacecraft": "ISS",
+      "sighting_date": "Fri Feb 25/05:48 AM",
+      "duration_minutes": "3",
+      "max_elevation": "13",
+      "enters": "10 above NW",
+      "exits": "10 above NNE",
+      "utc_offset": "-8.0",
+      "utc_time": "13:48",
+      "utc_date": "Feb 25, 2022"
+    }
+  ]
+}
+
+12 sightings found in Reno
+```
