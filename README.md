@@ -1,5 +1,5 @@
 # Homework Directory for COE 332 – Software Engineering & Design
-Homework Assignments for COE 332 will be posted here. 
+Homework Assignments for COE 332 will be posted here. Each homework assignment has it's own directory with the naming convention `homework0X`. Inside each directory, there is a README.md, Python scripts, and the files needed for the Python script to function.
 
 ## Folders
 - `homework01` Intro to Python: Testing Basic Scripts
@@ -16,18 +16,3 @@ Homework Assignments for COE 332 will be posted here.
   - Kubernetes (k8s) are used to deploy a Flask API that uses Redis to create a test environment for the application. The application reads meteorite landing data from a json file and oututs the result to the user.
 - `homework07` International Space Station Tracker - Behavioral Diagram
   - the behavioral diagram is for a midterm found [here](https://github.com/osvasali/ISS-Tracking-Application-Using-Flask).
-
-## Organization of the README Files
-Below is a brief description of each section in the homework README files.
-
-### Homework Objectives
-Details the key areas of study from the homework.
-
-### Homework Description
-Describes the scenario of the homework and what its trying to accomplish.
-
-### Scripts
-Briefly describes of each script and describes the tasks accomplished by each script.
-
-### How to Run the Code
-Provides a step by step tutorial on how to use the code and a detailed description on how to interpret the output.
