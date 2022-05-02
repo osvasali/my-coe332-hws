@@ -1,7 +1,7 @@
 # Homework Directory for COE 332 – Software Engineering & Design
 Homework Assignments for COE 332 will be posted here. Each homework assignment has it's own directory with the naming convention `homework0X`. Inside each directory, there is a README.md, Python scripts, and the files needed for the Python script to function.
 
-## Folders
+## Directories
 - `homework01` Intro to Python: Testing Basic Scripts
   - contains two solutions for the two exercises from the python refresher guide.
 - `homework02` Mars Rover Mission Report
