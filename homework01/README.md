@@ -1,6 +1,6 @@
 # Intro to Python: Testing Basic Scripts
 
-homework01 contains two solutions for the two exercises from the python refresher guide.
+homework01 contains two solutions for the two exercises from the python [refresher guide](https://coe-332-sp22.readthedocs.io/en/main/unit01/python_refresher.html#exercises). 
 
 listOddOrEven.py 
 contains a list of ~10 different integers and checks if the numbers in the list are even or odd.
